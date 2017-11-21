@@ -9,7 +9,7 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 client = LineClient()
-client._tokenLogin("EmG9pJTj05JMUmdoH4m3.2IxJDdUDH+1V/EUW9SrlSW.mveXhQ9eZmpYyW2HX6D5eRKaUtQRMcjZ+eNoQaJtfYA=")
+client._qrLogin("line://au/q/")
 
 profile, setting, tracer = client.getProfile(), client.getSettings(), LineTracer(client)
 offbot, messageReq, wordsArray, waitingAnswer = [], {}, {}, {}
@@ -127,17 +127,7 @@ def SEND_MESSAGE(op):
             midd = msg.text.replace("Inv ","")
             client.findAndAddContactsByMid(midd)
             client.inviteIntoGroup(msg.to,[midd])
-			
-        if msg.toType == 2:
-            if msg.text in ["all bot join"]:
-                midd = "u75a6effe68720719c109a4a4d66eb284"
-                middd = "ub2d1d380ab4c1edb57f30f3444087189"
-                midddd = "u4b34358d21a6c30dd8729f43fe33c878"
-                client.findAndAddContactsByMid(midd)
-                client.findAndAddContactsByMid(middd)
-                client.findAndAddContactsByMid(midddd)
-                client.inviteIntoGroup(msg.to,[midd,middd,midddd])
-				
+
         if msg.toType == 2:
             if msg.text in ["tag all","Tagall"]:
                   group = client.getGroup(msg.to)
