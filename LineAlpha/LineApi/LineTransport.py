@@ -20,8 +20,8 @@ except:
 
 class LineTransport(TTransportBase):
 
-    UserAgent   = 'DESKTOP:MAC:10.10.2-YOSEMITE-x64(4.5.0)'
-    AppName     = 'DESKTOPMAC 10.10.2-YOSEMITE-x64    MAC 4.5.0'
+    UserAgent   = 'Line/7.14.0'
+    AppName     = 'IOSIPAD\t7.14.0\tiPhone OS\t10.12.0'
 
     def __init__(self, uri_or_host, port=None, path=None):
         if port is not None:
